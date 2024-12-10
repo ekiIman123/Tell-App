@@ -1,3 +1,13 @@
+/**
+ * test scenario for threadsDetail Reducer
+ *
+ * - threadReducers function
+ *  - should return the initial state
+ *  - should handle RECEIVE_THREAD_DETAIL
+ *  - should handle CLEAR_THREAD_DETAIL
+ *  - should handle ADD_COMMENT_TO_THREAD_DETAIL
+ */
+
 import { describe, it, expect } from 'vitest';
 import threadDetailReducer from './reducer';
 import { ActionType } from './action';
