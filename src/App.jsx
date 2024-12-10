@@ -9,9 +9,9 @@ import DetailPage from './pages/DetailPage.jsx';
 import LeaderboardPage from './pages/LeaderboardPage.jsx';
 import { asyncPreloadProcess } from './states/isPreload/action.js';
 import { asyncUnsetAuthUser } from './states/authUser/action.js';
-import { asyncAddThread } from './states/talks/action.js';
+import { asyncAddThread } from './states/threads/action.js';
 import TalkModal from './components/TalkModal.jsx';
-import { asyncAddTalkDetailComment } from './states/talkDetail/action.js';
+import { asyncAddThreadDetailComment } from './states/threadDetail/action.js';
 import Loading from './components/Loading.jsx';
 
 function App() {
@@ -43,7 +43,7 @@ function App() {
   };
 
   const onAddComment = (content) => {
-    dispatch(asyncAddTalkDetailComment({ threadId: idThread, content }));
+    dispatch(asyncAddThreadDetailComment({ threadId: idThread, content }));
     setModal((prevsetModal) => !prevsetModal);
   };
 
@@ -54,7 +54,6 @@ function App() {
   const modalProps = !idThread
     ? { addThread: onAddThread }
     : { addComment: onAddComment };
-  console.log(modalProps);
 
   if (isPreload) {
     return null;

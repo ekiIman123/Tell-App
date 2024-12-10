@@ -44,7 +44,7 @@ function TalkVote({ id, authUser, upVotesBy, downVotesBy, totalComments, comment
         <button
           type="button"
           aria-label="like"
-          onClick={isUpVoted ? onNeutralVoteClick : onUpVoteClick}
+        // onClick={isUpVoted ? onNeutralVoteClick : onUpVoteClick}
         >
           {isUpVoted ? <IoIosArrowUp style={{ color: 'red' }} /> : <IoIosArrowUp />}
         </button>
@@ -55,7 +55,7 @@ function TalkVote({ id, authUser, upVotesBy, downVotesBy, totalComments, comment
         <button
           type="button"
           aria-label="dislike"
-          onClick={isDownVoted ? onNeutralVoteClick : onDownVoteClick}
+        // onClick={isDownVoted ? onNeutralVoteClick : onDownVoteClick}
         >
           {isDownVoted ? <IoIosArrowDown style={{ color: 'red' }} /> : <IoIosArrowDown />}
         </button>

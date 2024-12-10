@@ -5,12 +5,11 @@ import TalkTrending from '../components/TalkTrending';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
 import { asyncPopulateUsersAndTreads } from '../states/shared/action';
-import { asyncToggleVoteThread } from '../states/talks/action';
 import PropTypes from 'prop-types';
 
 function HomePage({ addThread, toggleTalkModal, modal }) {
   const authUser = useSelector((state) => state.authUser);
-  const threads = useSelector((state) => state.talks);
+  const threads = useSelector((state) => state.threads);
   const users = useSelector((state) => state.users);
 
   const dispatch = useDispatch();
@@ -21,7 +20,7 @@ function HomePage({ addThread, toggleTalkModal, modal }) {
 
 
   const onVote = (id, voteType) => {
-    dispatch(asyncToggleVoteThread(id, voteType));
+    // dispatch(asyncToggleVoteThread(id, voteType));
   };
 
   const threadList = threads.map((thread) => ({

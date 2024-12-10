@@ -1,6 +1,6 @@
 import api from '../../utils/api';
 import { receiveUsersActionCreator } from '../users/action';
-import { receiveThreadsActionCreator } from '../talks/action';
+import { receiveThreadsActionCreator } from '../threads/action';
 import { showLoading, hideLoading } from 'react-redux-loading-bar';
 
 function asyncPopulateUsersAndTreads() {

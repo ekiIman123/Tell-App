@@ -236,7 +236,7 @@ const api = (() => {
   }
 
   // async function toggleLikeTalk(id) {
-  //   const response = await _fetchWithAuth(`${BASE_URL}/talks/likes`, {
+  //   const response = await _fetchWithAuth(`${BASE_URL}/threads/likes`, {
   //     method: 'POST',
   //     headers: {
   //       'Content-Type': 'application/json',
