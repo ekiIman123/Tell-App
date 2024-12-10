@@ -1,110 +1,51 @@
 import { describe, it, expect } from 'vitest';
-import talkDetailReducer from './reducer';
+import threadDetailReducer from './reducer';
 import { ActionType } from './action';
 
-describe('talkDetailReducer', () => {
-  it('should return the initial state when given an unknown action', () => {
-    // Arrange
-    const initialState = null;
-    const action = { type: 'UNKNOWN_ACTION' };
+describe('threadDetailReducer', () => {
+  const initialState = null;
 
-    // Act
-    const nextState = talkDetailReducer(initialState, action);
+  const mockThreadDetail = {
+    id: 'thread-1',
+    title: 'Sample Thread',
+    comments: [],
+    likes: ['user-1', 'user-2'],
+  };
 
-    // Assert
-    expect(nextState).toBe(initialState);
+  const mockComment = {
+    id: 'comment-1',
+    userId: 'user-3',
+    content: 'Great discussion!',
+  };
+
+  it('should return the initial state', () => {
+    expect(threadDetailReducer(undefined, {})).toBe(initialState);
   });
 
-  it('should set the talkDetail when RECEIVE_TALK_DETAIL action is dispatched', () => {
-    // Arrange
-    const initialState = null;
+  it('should handle RECEIVE_THREAD_DETAIL', () => {
     const action = {
-      type: ActionType.RECEIVE_TALK_DETAIL,
-      payload: {
-        talkDetail: {
-          id: 'thread-1',
-          title: 'Test Thread',
-          content: 'This is a test thread.',
-          likes: [],
-          comments: [],
-        },
-      },
+      type: ActionType.RECEIVE_THREAD_DETAIL,
+      payload: { threadDetail: mockThreadDetail },
     };
-
-    // Act
-    const nextState = talkDetailReducer(initialState, action);
-
-    // Assert
-    expect(nextState).toEqual(action.payload.talkDetail);
+    const newState = threadDetailReducer(initialState, action);
+    expect(newState).toEqual(mockThreadDetail);
   });
 
-  it('should clear the talkDetail when CLEAR_TALK_DETAIL action is dispatched', () => {
-    // Arrange
-    const initialState = {
-      id: 'thread-1',
-      title: 'Test Thread',
-      content: 'This is a test thread.',
-      likes: [],
-      comments: [],
-    };
+  it('should handle CLEAR_THREAD_DETAIL', () => {
     const action = {
-      type: ActionType.CLEAR_TALK_DETAIL,
+      type: ActionType.CLEAR_THREAD_DETAIL,
     };
-
-    // Act
-    const nextState = talkDetailReducer(initialState, action);
-
-    // Assert
-    expect(nextState).toBeNull();
+    const newState = threadDetailReducer(mockThreadDetail, action);
+    expect(newState).toBeNull();
   });
 
-  it('should toggle the like status when TOGGLE_LIKE_TALK_DETAIL action is dispatched', () => {
-    // Arrange
-    const initialState = {
-      id: 'thread-1',
-      title: 'Test Thread',
-      content: 'This is a test thread.',
-      likes: ['user-1', 'user-2'],
-      comments: [],
-    };
+  it('should handle ADD_COMMENT_TO_THREAD_DETAIL', () => {
     const action = {
-      type: ActionType.TOGGLE_LIKE_TALK_DETAIL,
-      payload: {
-        userId: 'user-2',
-      },
+      type: ActionType.ADD_COMMENT_TO_THREAD_DETAIL,
+      payload: { comment: mockComment },
     };
-
-    // Act
-    const nextState = talkDetailReducer(initialState, action);
-
-    // Assert
-    expect(nextState.likes).toEqual(['user-1']);
-  });
-
-  it('should add a comment when ADD_COMMENT_TO_TALK_DETAIL action is dispatched', () => {
-    // Arrange
-    const initialState = {
-      id: 'thread-1',
-      title: 'Test Thread',
-      content: 'This is a test thread.',
-      likes: [],
-      comments: [],
-    };
-    const action = {
-      type: ActionType.ADD_COMMENT_TO_TALK_DETAIL,
-      payload: {
-        comment: {
-          id: 'comment-1',
-          content: 'This is a comment.',
-          userId: 'user-1',
-        },
-      },
-    };
-
-    // Act
-    const nextState = talkDetailReducer(initialState, action);
-
-    // Assert
-    expect(nextState.comments).toEqual([action.payload.comment]);
+    const newState = threadDetailReducer(mockThreadDetail, action);
+    expect(newState.comments).toHaveLength(1);
+    expect(newState.comments[0]).toEqual(mockComment);
   });
 });

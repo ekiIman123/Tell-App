@@ -4,7 +4,7 @@ import api from '../../utils/api';
 const ActionType = {
   RECEIVE_THREAD_DETAIL: 'RECEIVE_THREAD_DETAIL',
   CLEAR_THREAD_DETAIL: 'CLEAR_THREAD_DETAIL',
-  TOGGLE_LIKE_THREAD_DETAIL: 'TOGGLE_LIKE_THREAD_DETAIL',
+  TOGGLE_VOTE_THREAD_DETAIL: 'TOGGLE_VOTE_THREAD_DETAIL',
   ADD_COMMENT_TO_THREAD_DETAIL: 'ADD_COMMENT_TO_THREAD_DETAIL',
 };
 
@@ -60,12 +60,13 @@ function asyncAddThreadDetailComment({ threadId, content }) {
 
 // function toggleLikeThreadDetailActionCreator(userId) {
 //   return {
-//     type: ActionType.TOGGLE_LIKE_THREAD_DETAIL,
+//     type: ActionType.TOGGLE_VOTE_THREAD_DETAIL,
 //     payload: {
 //       userId,
 //     },
 //   };
 // }
+
 // function asyncToogleVoteThreadDetail() {
 //   return async (dispatch, getState) => {
 //     const { authUser, threadDetail } = getState();

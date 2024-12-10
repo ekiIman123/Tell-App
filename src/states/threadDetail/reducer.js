@@ -6,17 +6,17 @@ function threadDetailReducer(threadDetail = null, action = {}) {
       return action.payload.threadDetail;
     case ActionType.CLEAR_THREAD_DETAIL:
       return null;
-    case ActionType.TOGGLE_LIKE_THREAD_DETAIL:
+    case ActionType.ADD_COMMENT_TO_THREAD_DETAIL:
+      return {
+        ...threadDetail,
+        comments: [...threadDetail.comments, action.payload.comment],
+      };
+      // case ActionType.TOGGLE_VOTE_THREAD_DETAIL:
       return {
         ...threadDetail,
         likes: threadDetail.likes.includes(action.payload.userId)
           ? threadDetail.likes.filter((id) => id !== action.payload.userId)
           : threadDetail.likes.concat(action.payload.userId),
-      };
-    case ActionType.ADD_COMMENT_TO_THREAD_DETAIL:
-      return {
-        ...threadDetail,
-        comments: [...threadDetail.comments, action.payload.comment],
       };
     default:
       return threadDetail;
