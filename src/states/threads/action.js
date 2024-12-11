@@ -35,6 +35,13 @@ function asyncAddThread({ title, body, category = '' }) {
   };
 }
 
+export {
+  ActionType,
+  receiveThreadsActionCreator,
+  addThreadActionCreator,
+  asyncAddThread,
+};
+
 // function toggleVoteThreadActionCreator({ threadId, userId, voteType }) {
 //   return {
 //     type: ActionType.TOGGLE_VOTE_THREAD,
@@ -71,12 +78,3 @@ function asyncAddThread({ title, body, category = '' }) {
 //     }
 //   };
 // }
-
-export {
-  ActionType,
-  receiveThreadsActionCreator,
-  addThreadActionCreator,
-  asyncAddThread,
-  // toggleVoteThreadActionCreator,
-  // asyncToggleVoteThread,
-};
