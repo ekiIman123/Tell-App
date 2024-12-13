@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import TalkLeaderboard from '../components/TalkLeaderboard';
 import TalkInput from '../components/TalkInput';
 import TalksList from '../components/TalksList';

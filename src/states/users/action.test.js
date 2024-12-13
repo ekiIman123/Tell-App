@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * skenario test
  *
@@ -48,7 +49,7 @@ describe('asyncRegisterUser', () => {
       password: 'securepassword',
     };
 
-    global.alert = vi.fn(); // Mock global alert
+    global.alert = vi.fn();
 
     // Act
     await asyncRegisterUser(userData)();

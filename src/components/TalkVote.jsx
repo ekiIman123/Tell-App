@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import PropTypes from 'prop-types';
 import React from 'react';
 import { FaRegComment } from 'react-icons/fa';
@@ -5,20 +6,20 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 
 function TalkVote({ id, authUser, upVotesBy, downVotesBy, totalComments, comments, vote, toggleTalkModal, isComment = false }) {
 
-  const onUpVoteClick = (event) => {
-    event.stopPropagation();
-    vote(id, 1);
-  };
+  // const onUpVoteClick = (event) => {
+  //   event.stopPropagation();
+  //   vote(id, 1);
+  // };
 
-  const onDownVoteClick = (event) => {
-    event.stopPropagation();
-    vote(id, -1);
-  };
+  // const onDownVoteClick = (event) => {
+  //   event.stopPropagation();
+  //   vote(id, -1);
+  // };
 
-  const onNeutralVoteClick = (event) => {
-    event.stopPropagation();
-    vote(id, 0);
-  };
+  // const onNeutralVoteClick = (event) => {
+  //   event.stopPropagation();
+  //   vote(id, 0);
+  // };
 
   function getCommentsLength(data) {
     if (data && Array.isArray(comments)) {

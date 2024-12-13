@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /**
  * skenario test
  *
@@ -56,8 +57,7 @@ describe('asyncAddThread', () => {
       category: 'General',
     };
 
-    global.alert = vi.fn(); // Mock global alert
-
+    global.alert = vi.fn();
     // Act
     await asyncAddThread(threadData)(dispatch);
 

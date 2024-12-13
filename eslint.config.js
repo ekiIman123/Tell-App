@@ -14,7 +14,7 @@ export default [
   daStyle,
   {
     rules: {
-      indent: false,
+      indent: 'off',
     },
   },
 ];

@@ -11,7 +11,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { setAuthUserActionCreator, unsetAuthUserActionCreator } from './action';
 import authUserReducer from './reducer';
-import api from '../../utils/api';
 
 // Mock the api functions
 vi.mock('../../utils/api', () => ({
