@@ -25,7 +25,7 @@ function LoginPage() {
           <strong>The World</strong>
           ,
           <br />
-          Through Talk Space.
+          Through Tell App.
         </h2>
 
         <LoginInput login={onLogin} />
