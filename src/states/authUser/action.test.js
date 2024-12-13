@@ -1,3 +1,13 @@
+/**
+ * skenario test
+ *
+ * - asyncSetAuthUser thunk
+ *  - should dispatch actions correctly when login succeeds
+ *  - should alert an error message when login fails
+ * - asyncUnsetAuthUser thunk
+ *  - should dispatch actions correctly
+ */
+
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import {
   asyncSetAuthUser,
