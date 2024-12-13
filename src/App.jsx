@@ -13,6 +13,7 @@ import { asyncAddThread } from './states/threads/action.js';
 import TalkModal from './components/TalkModal.jsx';
 import { asyncAddThreadDetailComment } from './states/threadDetail/action.js';
 import Loading from './components/Loading.jsx';
+import Container from './components/styled/Container.js';
 
 function App() {
   const authUser = useSelector((state) => state.authUser);
@@ -73,7 +74,7 @@ function App() {
   }
 
   return (
-    <div className="app-container">
+    <Container maxHeight="100%" maxWidth="100%">
       <header>
         <Navigation signOut={onSignOut} toggleTalkModal={onToggleTalkModal} />
       </header>
@@ -91,7 +92,7 @@ function App() {
           </>
         )}
       </main>
-    </div>
+    </Container>
   );
 }
 
