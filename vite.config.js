@@ -18,7 +18,7 @@ export default defineConfig({
       },
     }),
   ],
-  compiler: {
-    styledComponents: true,
+  test: {
+    environment: 'jsdom',
   },
 });
