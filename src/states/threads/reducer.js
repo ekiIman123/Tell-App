@@ -6,16 +6,16 @@ function threadsReducer(threads = [], action = {}) {
       return action.payload.threads;
     case ActionType.ADD_THREAD:
       return [action.payload.thread, ...threads];
-      // case ActionType.TOGGLE_VOTE_THREAD:
-      return threads.map((thread) => {
-        if (thread.id === action.payload.threadId) {
-          return {
-            ...thread,
-            voteType: action.payload.voteType,
-          };
-        }
-        return thread;
-      });
+    // case ActionType.TOGGLE_VOTE_THREAD:
+    // return threads.map((thread) => {
+    //   if (thread.id === action.payload.threadId) {
+    //     return {
+    //       ...thread,
+    //       voteType: action.payload.voteType,
+    //     };
+    //   }
+    //   return thread;
+    // });
     default:
       return threads;
   }

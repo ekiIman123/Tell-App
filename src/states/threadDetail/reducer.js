@@ -11,13 +11,13 @@ function threadDetailReducer(threadDetail = null, action = {}) {
         ...threadDetail,
         comments: [...threadDetail.comments, action.payload.comment],
       };
-      // case ActionType.TOGGLE_VOTE_THREAD_DETAIL:
-      return {
-        ...threadDetail,
-        likes: threadDetail.likes.includes(action.payload.userId)
-          ? threadDetail.likes.filter((id) => id !== action.payload.userId)
-          : threadDetail.likes.concat(action.payload.userId),
-      };
+    // case ActionType.TOGGLE_VOTE_THREAD_DETAIL:
+    // return {
+    //   ...threadDetail,
+    //   likes: threadDetail.likes.includes(action.payload.userId)
+    //     ? threadDetail.likes.filter((id) => id !== action.payload.userId)
+    //     : threadDetail.likes.concat(action.payload.userId),
+    // };
     default:
       return threadDetail;
   }

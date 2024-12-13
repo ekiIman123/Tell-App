@@ -1,3 +1,14 @@
+/* eslint-disable no-undef */
+/**
+ * skenario test
+ *
+ * - asyncSetAuthUser thunk
+ *  - should dispatch actions correctly when login succeeds
+ *  - should alert an error message when login fails
+ * - asyncUnsetAuthUser thunk
+ *  - should dispatch actions correctly
+ */
+
 import { describe, it, expect, vi, afterEach } from 'vitest';
 import {
   asyncSetAuthUser,
@@ -25,13 +36,6 @@ vi.mock('react-redux-loading-bar', () => ({
 
 describe('Thunk Actions', () => {
   const dispatch = vi.fn();
-  const mockAuthUser = {
-    id: 'john_doe',
-    name: 'John Doe',
-    email: 'john@example.com',
-    avatar: 'https://generated-image-url.jpg',
-  };
-  const mockToken = 'mock-token';
 
   afterEach(() => {
     vi.clearAllMocks();
